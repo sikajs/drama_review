@@ -2,6 +2,7 @@ class DramasController < ApplicationController
   before_action :find_drama, only: [:show, :edit, :update, :destroy]
 
   def index
+    @dramas = Drama.all.order("created_at DESC")
   end
 
   def show
@@ -22,13 +23,21 @@ class DramasController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
+    if @drama.update(drama_params)
+      redirect_to @drama
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @drama.image = nil
+    @drama.save
+    @drama.destroy
+    redirect_to root_path
   end
 
   private
@@ -37,6 +46,6 @@ class DramasController < ApplicationController
     end
 
     def drama_params
-      params.require(:drama).permit(:title, :description, :num_of_chapter, :actors, :rating)
+      params.require(:drama).permit(:title, :description, :num_of_chapter, :actors, :rating, :image)
     end
 end

@@ -1,3 +1,4 @@
+<%= image_tag @drama.image.url(:medium) %>
 <h1><%= @drama.title %></h1>
 <p><%= @drama.description %></p>
 <p><%= @drama.num_of_chapter %></p>
@@ -5,4 +6,6 @@
 <p><%= @drama.rating %></p>
 
 
+<%= link_to "Edit", edit_drama_path(@drama) %>
+<%= link_to "Delete", drama_path(@drama), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to "Home", root_path %>
