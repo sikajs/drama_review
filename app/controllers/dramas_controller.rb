@@ -2,6 +2,7 @@ class DramasController < ApplicationController
   before_action :find_drama, only: [:show, :edit, :update, :destroy]
 
   def index
+    @dramas = Drama.all.order("created_at DESC")
   end
 
   def show
@@ -22,13 +23,19 @@ class DramasController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
+    if @drama.update(drama_params)
+      redirect_to @drama
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @drama.destroy
+    redirect_to root_path
   end
 
   private

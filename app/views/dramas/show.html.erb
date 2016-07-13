@@ -5,4 +5,6 @@
 <p><%= @drama.rating %></p>
 
 
+<%= link_to "Edit", edit_drama_path(@drama) %>
+<%= link_to "Delete", drama_path(@drama), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to "Home", root_path %>
