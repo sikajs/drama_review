@@ -17,7 +17,8 @@ class DramasController < ApplicationController
     @drama = Drama.new(drama_params)
 
     if @drama.save
-      redirect_to @drama, notice: "Drama successfully created"
+      flash[:success] = "Drama successfully created"
+      redirect_to @drama
     else
       render :new
     end
@@ -28,6 +29,7 @@ class DramasController < ApplicationController
 
   def update
     if @drama.update(drama_params)
+      flash[:success] = "Drama successfully updated"
       redirect_to @drama
     else
       render :edit
@@ -38,6 +40,7 @@ class DramasController < ApplicationController
     @drama.image = nil
     @drama.save
     @drama.destroy
+    flash[:success] = "Drama successfully deleted"
     redirect_to root_path
   end
 
