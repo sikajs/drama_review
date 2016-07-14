@@ -1,15 +1,27 @@
-<%= image_tag @drama.image.url(:medium) %>
-<p>
-  Submitted by <%= @drama.user.email %>
-  <%= time_ago_in_words(@drama.created_at) %> ago
-</p>
-<h1><%= @drama.title %></h1>
-<p><%= @drama.description %></p>
-<p><%= @drama.num_of_chapter %></p>
-<p><%= @drama.actors %></p>
-<p><%= @drama.rating %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-5">
+        <%= image_tag @drama.image.url(:small) %>
+        <p>
+          Posted by <%= @drama.user.email %>
+          <%= time_ago_in_words(@drama.created_at) %> ago
+        </p>
+        <h1><%= @drama.title %></h1>
+        <p><strong>Description:</strong> <%= @drama.description %></p>
+        <p><strong>Number of Chapter:</strong> <%= @drama.num_of_chapter %></p>
+        <p><strong>Actors:</strong> <%= @drama.actors %></p>
+        <p><strong>Rating:</strong> <%= @drama.rating %></p>
+      </div>
 
+      <div id="reviews" class="col-md-5 col-md-offset-2">
+        TODO
+      </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+      <%= link_to "Edit", edit_drama_path(@drama), class: "btn btn-default", type: "button" %>
+      <%= link_to "Delete", drama_path(@drama), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default", type: "button" %>
+    </div>
 
-<%= link_to "Edit", edit_drama_path(@drama) %>
-<%= link_to "Delete", drama_path(@drama), method: :delete, data: { confirm: "Are you sure?" } %>
-<%= link_to "Home", root_path %>
+  </div>
+</div>
