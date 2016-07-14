@@ -2,19 +2,21 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-5">
-        <%= image_tag @drama.image.url(:small) %>
-        <p>
-          Posted by <%= @drama.user.email %>
+        <%= image_tag @drama.image.url(:medium) %>
+        <p class="post_time_user">
+          Posted by
+          <span class="show_user" ><%= @drama.user.email %></span>
           <%= time_ago_in_words(@drama.created_at) %> ago
         </p>
         <h1><%= @drama.title %></h1>
-        <p><strong>Description:</strong> <%= @drama.description %></p>
+        <p><strong>Description:</strong> <%= simple_format(@drama.description) %></p>
         <p><strong>Number of Chapter:</strong> <%= @drama.num_of_chapter %></p>
         <p><strong>Actors:</strong> <%= @drama.actors %></p>
         <p><strong>Rating:</strong> <%= @drama.rating %></p>
       </div>
 
       <div id="reviews" class="col-md-5 col-md-offset-2">
+        <h3>User Reviews</h3>
         TODO
       </div>
     </div>

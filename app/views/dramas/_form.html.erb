@@ -6,5 +6,9 @@
   <%= f.input :rating %>
   <%= f.input :image, as: :file %>
   <br/>
-  <%= f.button :submit %>
+  <div class="row">
+    <%= link_to "Cancel", root_path, class: "btn btn-default" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
 <% end %>
+
