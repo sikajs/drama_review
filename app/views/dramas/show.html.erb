@@ -1,4 +1,8 @@
 <%= image_tag @drama.image.url(:medium) %>
+<p>
+  Submitted by <%= @drama.user.email %>
+  <%= time_ago_in_words(@drama.created_at) %> ago
+</p>
 <h1><%= @drama.title %></h1>
 <p><%= @drama.description %></p>
 <p><%= @drama.num_of_chapter %></p>

@@ -10,11 +10,11 @@ class DramasController < ApplicationController
   end
 
   def new
-    @drama = Drama.new
+    @drama = current_user.dramas.build
   end
 
   def create
-    @drama = Drama.new(drama_params)
+    @drama = current_user.dramas.build(drama_params)
 
     if @drama.save
       flash[:success] = "Drama successfully created"
