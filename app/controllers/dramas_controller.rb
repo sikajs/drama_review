@@ -44,11 +44,16 @@ class DramasController < ApplicationController
   end
 
   def destroy
-    @drama.image = nil
-    @drama.save
-    @drama.destroy
-    flash[:success] = "Drama successfully deleted"
-    redirect_to root_path
+    if @drama.user == current_user
+      @drama.image = nil
+      @drama.save
+      @drama.destroy
+      flash[:success] = "Drama successfully deleted"
+      redirect_to root_path
+    else
+      flash[:danger] = "You don't have priviledge to do this."
+      redirect_to :back
+    end
   end
 
   def search
