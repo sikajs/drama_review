@@ -1,10 +1,10 @@
 <%= simple_form_for @drama, html: { multipart: true } do |f| %>
-  <%= f.input :image, as: :file %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :num_of_chapter %>
   <%= f.input :actors %>
   <%= f.input :rating %>
+  <%= f.input :image, as: :file %>
   <br/>
   <%= f.button :submit %>
 <% end %>
