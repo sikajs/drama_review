@@ -57,3 +57,7 @@ gem 'searchkick'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+group :production do
+  'rails_12factor'
+end
