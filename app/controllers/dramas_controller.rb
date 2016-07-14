@@ -7,6 +7,7 @@ class DramasController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(drama: @drama)
   end
 
   def new

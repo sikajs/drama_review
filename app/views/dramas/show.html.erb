@@ -17,7 +17,21 @@
 
       <div id="reviews" class="col-md-5 col-md-offset-2">
         <h3>User Reviews</h3>
-        TODO
+        <%= link_to "Write new comment", new_drama_comment_path(@drama), class: "btn btn-info" %>
+
+        <% if !@comments.blank? %>
+          <% @comments.each do |comment| %>
+            <div class="review">
+              <%= simple_format(comment.content) %>
+              Rating: <%= comment.rating %>
+              <p>
+                By User,
+                <%= time_ago_in_words(comment.created_at) %> ago
+              </p>
+            </div>
+          <% end %>
+        <% end %>
+
       </div>
     </div>
     <div class="btn-group" role="group" aria-label="...">
