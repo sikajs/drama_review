@@ -103,7 +103,6 @@ GEM
     minitest (5.9.0)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -114,6 +113,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -217,8 +217,8 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (>= 0.3.13, < 0.5)
   paperclip
+  pg
   rails (= 4.2.6)
   rspec-rails
   sass-rails (~> 5.0)
