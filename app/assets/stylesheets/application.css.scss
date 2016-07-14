@@ -28,7 +28,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   width: 8em;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .show_user {
@@ -37,4 +37,14 @@ label {
 
 .post_time_user {
   margin: 10px 0 10px;
+}
+
+div.input {
+  margin: 3px;
+  padding-top: 1px;
+}
+
+textarea#drama_description {
+  width: 400px;
+  height: 300px;
 }
