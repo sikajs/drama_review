@@ -51,6 +51,14 @@ class DramasController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    if params[:search].present?
+      @dramas = Drama.search(params[:search])
+    else
+      @dramas = Drama.all.order("created_at DESC")
+    end
+  end
+
   private
     def find_drama
       @drama = Drama.find(params[:id])

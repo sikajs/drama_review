@@ -18,15 +18,9 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
     def set_drama
       @drama = Drama.find(params[:drama_id])
-    end
-
-    def set_comment
     end
 
     def comment_params

@@ -45,11 +45,12 @@ group :development do
   gem 'spring'
 end
 
-
 gem 'devise'
 gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'searchkick'
+
 group :development, :test do
   gem 'rspec-rails'
 end
