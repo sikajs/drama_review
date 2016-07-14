@@ -1,3 +1,12 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h2>Cannot find your favarite drama?</h2>
+    <p>
+      <%= link_to "Sign Up To Add It Now!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    </p>
+  </div>
+<% end %>
+
 <div class="row">
   <% @dramas.each do |drama| %>
     <div class="col-sm-6 col-md-3">
