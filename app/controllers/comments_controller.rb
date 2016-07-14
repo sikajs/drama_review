@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_drama
-
+  before_action :authenticate_user!
 
   def new
     @comment = Comment.new
