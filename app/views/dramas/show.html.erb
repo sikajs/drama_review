@@ -12,12 +12,16 @@
         <p><strong>Description:</strong> <%= simple_format(@drama.description) %></p>
         <p><strong>Number of Chapter:</strong> <%= @drama.num_of_chapter %></p>
         <p><strong>Actors:</strong> <%= @drama.actors %></p>
-        <p><strong>Rating:</strong> <span class="star-rating" data-score=<%= @avg_rating %> ></span></p>
+        <p><strong>Rating:</strong> <%= @drama.rating %></p>
+        <p><strong>Peer Rating:</strong> <span class="star-rating" data-score=<%= @avg_rating %> ></span></p>
       </div>
 
       <div id="reviews" class="col-md-5 col-md-offset-2">
-        <h3>User Reviews</h3>
-        <%= link_to "Write new comment", new_drama_comment_path(@drama), class: "btn btn-info" %>
+        <div class="row" id="reviews_header">
+          <h3>User Reviews
+          <%= link_to "Write new comment", new_drama_comment_path(@drama), class: "btn btn-info pull-right" %>
+          </h3>
+        </div>
 
         <% if !@comments.blank? %>
           <% @comments.each do |comment| %>
@@ -25,10 +29,11 @@
               <%= simple_format(comment.content) %>
               <div class="star-rating" data-score=<%= comment.rating %> ></div>
               <p>
-                By User,
+                By <%= comment.user.email %>,
                 <%= time_ago_in_words(comment.created_at) %> ago
               </p>
             </div>
+            <hr/>
           <% end %>
         <% else %>
           <h4>No comment in this yet. Be the first one!</h4>

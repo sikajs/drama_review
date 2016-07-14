@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714071708) do
+ActiveRecord::Schema.define(version: 20160714090040) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -19,18 +19,20 @@ ActiveRecord::Schema.define(version: 20160714071708) do
     t.integer  "drama_id",   limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "user_id",    limit: 4
   end
 
   add_index "comments", ["drama_id"], name: "index_comments_on_drama_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "dramas", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.text     "description",        limit: 65535
     t.integer  "num_of_chapter",     limit: 4
     t.text     "actors",             limit: 65535
-    t.decimal  "rating",                           precision: 10
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "rating",             limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
@@ -57,4 +59,5 @@ ActiveRecord::Schema.define(version: 20160714071708) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "comments", "dramas"
+  add_foreign_key "comments", "users"
 end

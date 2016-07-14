@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.drama = @drama
+    @comment.user = current_user
 
     if @comment.save
       redirect_to @drama
