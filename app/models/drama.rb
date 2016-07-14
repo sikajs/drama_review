@@ -6,6 +6,7 @@ class Drama < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :title, presence: true
+  validates :title, length: { maximum: 40 }
   validates :description, presence: true
 
   searchkick
