@@ -29,7 +29,7 @@
               <%= simple_format(comment.content) %>
               <div class="star-rating" data-score=<%= comment.rating %> ></div>
               <p>
-                By <%= comment.user.email %>,
+                By <span class="show_user"> <%= comment.user.email %></span>
                 <%= time_ago_in_words(comment.created_at) %> ago
               </p>
             </div>
