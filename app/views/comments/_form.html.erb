@@ -1,8 +1,17 @@
 <%= simple_form_for [@drama, @comment] do |f| %>
   <%= f.input :content %>
-  <%= f.input :rating %>
+
+  <div id="comment_rating"></div>
+  <br/>
   <div class="row">
     <%= link_to 'Cancel', drama_path(@drama), class: "btn btn-default" %>
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<script>
+  $('#comment_rating').raty({
+    path: "/assets/",
+    scoreName: "comment[rating]"
+  });
+</script>

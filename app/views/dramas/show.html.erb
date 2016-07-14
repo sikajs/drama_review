@@ -12,7 +12,7 @@
         <p><strong>Description:</strong> <%= simple_format(@drama.description) %></p>
         <p><strong>Number of Chapter:</strong> <%= @drama.num_of_chapter %></p>
         <p><strong>Actors:</strong> <%= @drama.actors %></p>
-        <p><strong>Rating:</strong> <%= @drama.rating %></p>
+        <p><strong>Rating:</strong> <span class="star-rating" data-score=<%= @avg_rating %> ></span></p>
       </div>
 
       <div id="reviews" class="col-md-5 col-md-offset-2">
@@ -21,15 +21,17 @@
 
         <% if !@comments.blank? %>
           <% @comments.each do |comment| %>
-            <div class="review">
+            <div class="review" id="<%= comment.id %>">
               <%= simple_format(comment.content) %>
-              Rating: <%= comment.rating %>
+              <div class="star-rating" data-score=<%= comment.rating %> ></div>
               <p>
                 By User,
                 <%= time_ago_in_words(comment.created_at) %> ago
               </p>
             </div>
           <% end %>
+        <% else %>
+          <h4>No comment in this yet. Be the first one!</h4>
         <% end %>
 
       </div>
@@ -41,3 +43,13 @@
 
   </div>
 </div>
+
+<script>
+  $('.star-rating').raty({
+    path: "/assets/",
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    }
+  });
+</script>

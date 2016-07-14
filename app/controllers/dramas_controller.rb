@@ -7,7 +7,13 @@ class DramasController < ApplicationController
   end
 
   def show
-    @comments = Comment.where(drama: @drama)
+    @comments = Comment.where(drama: @drama).order("created_at DESC")
+
+    if @comments.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @comments.average(:rating)
+    end
   end
 
   def new
