@@ -1,8 +1,10 @@
-ENV.update YAML.load_file('config/application.yml')[Rails.env] rescue {}
+
 
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+
+ENV.update YAML.load_file('config/application.yml')[Rails.env] rescue {}
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
