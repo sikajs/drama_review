@@ -1,12 +1,11 @@
 {<img src="https://codeclimate.com/github/sikajs/drama_review/badges/gpa.svg" />}[https://codeclimate.com/github/sikajs/drama_review]
 
+{<img src="https://codeclimate.com/github/sikajs/drama_review/badges/coverage.svg" />}[https://codeclimate.com/github/sikajs/drama_review/coverage]
+
 == README
 
-This project is to create an discussing arena for people who loves to watch dramas
+This project is to create a discussing arena for people who loves to watch dramas
 
 Based on Ruby 2.3.1 & Rails 4.2.6, also use elasticsearch
 
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
