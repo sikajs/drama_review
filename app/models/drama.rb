@@ -1,4 +1,7 @@
 class Drama < ActiveRecord::Base
+
+  scope :recent_first, -> { order("created_at DESC") }
+
   belongs_to :user
   has_many :comments, dependent: :destroy
 

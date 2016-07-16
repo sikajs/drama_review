@@ -3,11 +3,11 @@ class DramasController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @dramas = Drama.all.order("created_at DESC")
+    @dramas = Drama.all.recent_first
   end
 
   def show
-    @comments = Comment.where(drama: @drama).order("created_at DESC")
+    @comments = Comment.where(drama: @drama).recent_first
 
     if @comments.blank?
       @avg_rating = 0
@@ -60,7 +60,7 @@ class DramasController < ApplicationController
     if params[:search].present?
       @dramas = Drama.search(params[:search])
     else
-      @dramas = Drama.all.order("created_at DESC")
+      @dramas = Drama.all.recent_first
     end
   end
 
