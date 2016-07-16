@@ -59,15 +59,14 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.2)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.7)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    capistrano3-puma (1.2.1)
-      capistrano (~> 3.0)
-      puma (>= 2.6)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -143,7 +142,6 @@ GEM
       mimemagic (~> 0.3.0)
     pg (0.18.4)
     pkg-config (1.1.7)
-    puma (3.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -166,11 +164,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -252,9 +245,9 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
+  capistrano-passenger
   capistrano-rails
   capistrano-rvm
-  capistrano3-puma
   coffee-rails (~> 4.1.0)
   devise
   faker
@@ -263,9 +256,7 @@ DEPENDENCIES
   jquery-rails
   paperclip
   pg
-  puma
   rails (= 4.2.6)
-  rails_12factor
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
