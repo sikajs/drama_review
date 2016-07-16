@@ -8,7 +8,7 @@
           <strong>Peer Rating:</strong> <span class="star-rating" data-score=<%= @avg_rating %> ></span>
           <div class="pull-right">
           Posted by
-          <span class="show_user" ><%= @drama.user.email %></span>
+          <span class="show_user" ><%= @drama.user.name %></span>
           </div>
         </div>
         <h2 id="show_title"><span class="label label-success"><%= @drama.title %></span></h2>
@@ -33,7 +33,7 @@
               <%= simple_format(comment.content) %>
               <div class="star-rating" data-score=<%= comment.rating %> ></div>
               <p>
-                By <span class="show_user"> <%= comment.user.email %></span>
+                By <span class="show_user"> <%= comment.user.name %></span>
                 <%= time_ago_in_words(comment.created_at) %> ago
               </p>
             </div>
