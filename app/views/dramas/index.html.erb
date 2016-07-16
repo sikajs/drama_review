@@ -8,11 +8,5 @@
 <% end %>
 
 <div class="row">
-  <% @dramas.each do |drama| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag drama.image.url(:medium), class: "image"), drama %>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial:'drama_list', collection: @dramas, as: :drama %>
 </div>

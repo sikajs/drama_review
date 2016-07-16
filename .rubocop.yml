@@ -317,13 +317,13 @@ Performance/StringReplacement:
 
 Rails/ActionFilter:
   Description: 'Enforces consistent use of action filter methods.'
-  Enabled: false
+  Enabled: true
 
 Rails/Date:
   Description: >-
                   Checks the correct usage of date aware methods,
                   such as Date.today, Date.current etc.
-  Enabled: false
+  Enabled: true
 
 Rails/Delegate:
   Description: 'Prefer delegate method for delegations.'
@@ -331,7 +331,7 @@ Rails/Delegate:
 
 Rails/FindBy:
   Description: 'Prefer find_by over where.first.'
-  Enabled: false
+  Enabled: true
 
 Rails/FindEach:
   Description: 'Prefer all.find_each over all.find.'
@@ -363,7 +363,7 @@ Rails/TimeZone:
 
 Rails/Validation:
   Description: 'Use validates :attribute, hash of validations.'
-  Enabled: false
+  Enabled: true
 
 ################## Style #################################
 
@@ -404,7 +404,7 @@ Style/AlignParameters:
 Style/AndOr:
   Description: 'Use &&/|| instead of and/or.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-and-or-or'
-  Enabled: false
+  Enabled: true
 
 Style/ArrayJoin:
   Description: 'Use Array#join instead of Array#*.'
@@ -800,7 +800,7 @@ Style/NonNilCheck:
 Style/Not:
   Description: 'Use ! instead of not.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bang-not-not'
-  Enabled: false
+  Enabled: true
 
 Style/NumericLiterals:
   Description: >-
