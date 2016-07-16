@@ -55,5 +55,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+
+  gem 'rubocop', '~> 0.41.2', require: false
 end
 
