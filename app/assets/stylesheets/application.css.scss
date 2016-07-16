@@ -40,7 +40,7 @@ label {
 }
 
 div.input {
-  margin: 3px;
+  margin: 6px;
   padding-top: 1px;
 }
 
@@ -55,4 +55,12 @@ textarea#drama_description {
 
 #show_title {
   margin-top: 10px;
+}
+
+#signup_panel {
+  padding: 0px;
+}
+
+span.hint {
+  padding-left: 10px;
 }
