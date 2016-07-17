@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <li><%= link_to "New Drama", new_drama_path %></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", user_path(current_user) %></li>
               <li><%= link_to "Edit Account", edit_user_registration_path(current_user) %></li>
