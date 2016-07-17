@@ -12,5 +12,20 @@ class Drama < ActiveRecord::Base
   validates :title, length: { maximum: 40 }
   validates :description, presence: true
 
-  searchkick
+  after_touch :reindex
+  searchkick merge_mappings: true, mappings: {
+    drama: {
+      properties: {
+        title: { type: "string", analyzer: "keyword" }
+      }
+    }
+  }
+
+  def search_data
+    {
+      title: title,
+      actors: actors
+    }
+  end
+
 end
