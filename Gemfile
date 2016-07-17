@@ -62,7 +62,4 @@ group :development do
   gem 'rubocop', '~> 0.41.2', require: false
 end
 
-group :test do
-  gem 'simplecov', :require => false
-  gem "codeclimate-test-reporter", require: nil
-end
+gem "codeclimate-test-reporter", group: :test, require: nil

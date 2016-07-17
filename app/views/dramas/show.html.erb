@@ -32,7 +32,7 @@
         <% end %>
       </div>
     </div>
-    <% if is_drama_owner?(current_user) %>
+    <% if is_drama_owner?(@drama, current_user) %>
       <%= render 'drama_owner_actions' %>
     <% end %>
   </div>

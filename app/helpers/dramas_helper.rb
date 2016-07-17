@@ -1,5 +1,5 @@
 module DramasHelper
-  def is_drama_owner?(user)
-    user_signed_in? && (@drama.user == user)
+  def is_drama_owner?(drama, user)
+    user_signed_in? && (drama.user == user)
   end
 end
