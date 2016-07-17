@@ -6,4 +6,5 @@ class Comment < ActiveRecord::Base
   belongs_to :user, counter_cache: true
 
   validates :content, presence: true
+  validates :drama_id, presence: true
 end
