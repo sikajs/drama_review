@@ -42,7 +42,7 @@ group :development, :test do
   gem 'faker'
 
   # For codeclimate
-  gem "codeclimate-test-reporter", group: :test, require: nil
+
 end
 
 group :development do
@@ -62,3 +62,7 @@ group :development do
   gem 'rubocop', '~> 0.41.2', require: false
 end
 
+group :test do
+  gem 'simplecov', :require => false
+  gem "codeclimate-test-reporter", require: nil
+end

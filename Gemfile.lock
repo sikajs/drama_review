@@ -285,6 +285,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   simple_form
+  simplecov
   spring
   turbolinks
   uglifier (>= 1.3.0)
