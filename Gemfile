@@ -40,6 +40,9 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'faker'
+
+  # For codeclimate
+  gem "codeclimate-test-reporter", group: :test, require: nil
 end
 
 group :development do
