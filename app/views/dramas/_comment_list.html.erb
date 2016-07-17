@@ -1,0 +1,9 @@
+<div class="review" id="<%= comment.id %>">
+  <%= simple_format(comment.content) %>
+  <div class="star-rating" data-score=<%= comment.rating %> ></div>
+  <p>
+    By <span class="show_user"> <%= comment.user.name %></span>
+    <%= time_ago_in_words(comment.created_at) %> ago
+  </p>
+</div>
+<hr/>

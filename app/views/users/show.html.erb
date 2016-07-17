@@ -13,16 +13,10 @@
       <tr>
         <td>Comments</td>
         <td>
-          <% if @user.comments_count.nil? %>
-            0
-          <% else %>
-            <%= @user.comments_count %>
-          <% end %>
+          <%= show_user_comments_count %>
         </td>
       </tr>
     </table>
-
-
   </div>
 </div>
 

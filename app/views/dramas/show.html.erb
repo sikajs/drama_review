@@ -12,12 +12,10 @@
           </div>
         </div>
         <h2 id="show_title"><span class="label label-success"><%= @drama.title %></span></h2>
-
         <p><strong>Description:</strong> <%= simple_format(@drama.description) %></p>
         <p><strong>Number of Chapter:</strong> <%= @drama.num_of_chapter %></p>
         <p><strong>Actors:</strong> <%= @drama.actors %></p>
         <p><strong>Rating:</strong> <%= @drama.rating %></p>
-
       </div>
 
       <div id="reviews" class="col-md-5 col-md-offset-2">
@@ -28,21 +26,10 @@
         </div>
 
         <% if !@comments.blank? %>
-          <% @comments.each do |comment| %>
-            <div class="review" id="<%= comment.id %>">
-              <%= simple_format(comment.content) %>
-              <div class="star-rating" data-score=<%= comment.rating %> ></div>
-              <p>
-                By <span class="show_user"> <%= comment.user.name %></span>
-                <%= time_ago_in_words(comment.created_at) %> ago
-              </p>
-            </div>
-            <hr/>
-          <% end %>
+          <%= render partial: 'comment_list', collection: @comments, as: :comment %>
         <% else %>
           <h4>No comment in this yet. Be the first one!</h4>
         <% end %>
-
       </div>
     </div>
     <% if user_signed_in? && (@drama.user == current_user) %>
