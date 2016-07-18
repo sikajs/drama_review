@@ -1,0 +1,14 @@
+div.panel.panel-info.col-md-8.col-md-offset-2.user_panel
+  .panel-heading
+    h2 Profile
+  .panel-body
+    table.table
+      tr
+        td Name
+        td= @user.name
+      tr
+        td Email
+        td= @user.email
+      tr
+        td Comments
+        td= show_user_comments_count(@user)

@@ -1,0 +1,10 @@
+- if !user_signed_in?
+  div.jumbotron.text-center
+    h1 Comment & Vote!!
+    br
+    p Cannot find your favorite drama?
+    br
+    p= link_to "Sign Up To Add It Now!", new_user_registration_path, class: "btn btn-primary btn-lg"
+
+.row
+  = render partial:'drama_list', collection: @dramas, as: :drama

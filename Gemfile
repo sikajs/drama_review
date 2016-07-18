@@ -34,6 +34,7 @@ gem 'searchkick'
 
 gem 'figaro'
 
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,7 +60,11 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
 
+  # Code quality check
   gem 'rubocop', '~> 0.41.2', require: false
+
+  # Speed, Speed...
+  gem 'rack-mini-profiler', require: false
 end
 
 group :test do

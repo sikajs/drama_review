@@ -1,0 +1,47 @@
+.panel.panel-default
+  .panel-body
+    .row
+      .col-md-5
+        = image_tag @drama.image.url(:medium)
+
+        .post_time_user
+          strong Peer Rating:
+          span.star-rating data-score== @avg_rating
+          .pull-right
+            Posted by
+            span.show_user = @drama.user.name
+        h2#show_title
+          span.label.label-success= @drama.title
+        p
+          strong Description:
+          = simple_format(@drama.description)
+        p
+          strong Number of Chapter:
+          = @drama.num_of_chapter
+        p
+          strong Actors:
+          = @drama.actors
+        p
+          strong Actors:
+          = @drama.rating
+        - if is_drama_owner?(@drama, current_user)
+          = render 'drama_owner_actions'
+
+      #reviews.col-md-5.col-md-offset-2
+        #reviews_header.row
+          h3
+            = "User Reviews"
+            = link_to "Write new comment", new_drama_comment_path(@drama), class: "btn btn-info pull-right"
+        - if !@comments.blank?
+          = render partial: 'comment_list', collection: @comments, as: :comment
+        - else
+          h4 No comment in this yet. Be the first one!
+
+javascript:
+  $('.star-rating').raty({
+    path: "/images/",
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    }
+  });
