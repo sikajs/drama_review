@@ -40,9 +40,9 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'faker'
-
-  # For codeclimate
-
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :development do
@@ -52,7 +52,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-# Use Capistrano for deployment
+  # Use Capistrano for deployment
   gem 'capistrano'
   gem 'capistrano-passenger'
   gem 'capistrano-rails', require: false
@@ -62,4 +62,8 @@ group :development do
   gem 'rubocop', '~> 0.41.2', require: false
 end
 
-gem "codeclimate-test-reporter", group: :test, require: nil
+group :test do
+  # For codeclimate
+  gem "codeclimate-test-reporter", require: nil
+end
+
