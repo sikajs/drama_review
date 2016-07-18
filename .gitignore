@@ -13,3 +13,5 @@
 /tmp
 .ruby-version
 /public/system/dramas
+.byebug_history
+/coverage
