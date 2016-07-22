@@ -5,24 +5,24 @@
         = image_tag @drama.image.url(:medium)
 
         .post_time_user
-          strong Peer Rating:
+          strong= "#{t('.peer_rating')}: "
           span.star-rating data-score== @avg_rating
           .pull-right
-            Posted by
+            = t(:by)
             span.show_user = @drama.user.name
         h2#show_title
           span.label.label-success= @drama.title
         p
-          strong Description:
+          strong= "#{Drama.human_attribute_name('description')}: "
           = simple_format(@drama.description)
         p
-          strong Number of Chapter:
+          strong= "#{Drama.human_attribute_name('num_of_chapter')}: "
           = @drama.num_of_chapter
         p
-          strong Actors:
+          strong= "#{Drama.human_attribute_name('actors')}: "
           = @drama.actors
         p
-          strong Actors:
+          strong= "#{Drama.human_attribute_name('rating')}: "
           = @drama.rating
         - if is_drama_owner?(@drama, current_user)
           = render 'drama_owner_actions'
@@ -30,12 +30,12 @@
       #reviews.col-md-5.col-md-offset-2
         #reviews_header.row
           h3
-            = "User Reviews"
-            = link_to "Write new comment", new_drama_comment_path(@drama), class: "btn btn-info pull-right"
+            = t(".user_review_head")
+            = link_to t(".new_comment"), new_drama_comment_path(@drama), class: "btn btn-info pull-right"
         - if !@comments.blank?
           = render partial: 'comment_list', collection: @comments, as: :comment
         - else
-          h4 No comment in this yet. Be the first one!
+          h4= t('no_comment_yet_msg')
 
 javascript:
   $('.star-rating').raty({

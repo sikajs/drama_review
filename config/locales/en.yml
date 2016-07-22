@@ -20,4 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  new: "New "
+  ago: "ago"
+  by: "By"
+  no_comment_yet_msg: No comment in this yet. Be the first one!
+
+  activerecord:
+    attributes:
+      drama:
+        title: "Title"
+        description: "Description"
+  header:
+    new_drama: "New Drama"
+    profile: "Profile"
+    edit_account: "Edit Account"
+    sign_out: "Sign Out"
+    sign_up: "Sign Up"
+    sign_in: "Sign In"
+    search: "Search"
+    search_placeholder: "Search"
+    languages:
+      lang: "Language"
+      en: "English"
+      tw: "Traditional Chinese"
+
+  dramas:
+    show:
+      user_review_head: "User Reviews"
+      new_comment: "Write New Comment"
+      peer_rating: "Peer Rating"

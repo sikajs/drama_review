@@ -1,0 +1,53 @@
+tw:
+  new: "新"
+  edit: "編輯"
+  delete: "刪除"
+  cancel: "取消"
+  create: "創建"
+  submit: "送出"
+  ago: "前"
+  by: "由"
+  no_comment_yet_msg: "還沒有評論，你來做第一個吧！"
+
+  activerecord:
+    models:
+      user: "使用者"
+      drama:
+        one: "劇集"
+      comment: "評論"
+    attributes:
+      user:
+        name: "姓名"
+      drama:
+        title: "劇名"
+        description: "簡介描述"
+        num_of_chapter: "集數"
+        actors: "演員"
+        rating: "評語"
+        image: "圖片"
+      comment:
+        content: "內容"
+
+  header:
+    new_drama: "新增劇集"
+    profile: "個人情報"
+    edit_account: "編輯個人資料"
+    sign_out: "登出"
+    sign_up: "註冊"
+    sign_in: "登入"
+    search: "搜尋"
+    search_placeholder: "搜尋劇集, 演員..."
+    languages:
+      lang: "語言"
+      en: "英文"
+      tw: "繁體中文"
+
+  dramas:
+    show:
+      user_review_head: "使用者評論"
+      new_comment: "建立新評論"
+      peer_rating: "共同評分"
+  datetime:
+    distance_in_words:
+      x_days: "%{count} 天"
+

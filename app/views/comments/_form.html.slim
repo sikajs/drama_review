@@ -4,8 +4,8 @@
   #comment_rating
   br
   .row
-    = link_to 'Cancel', drama_path(@drama), class: "btn btn-default"
-    = f.button :submit, class: "btn btn-primary"
+    = link_to t(:cancel), drama_path(@drama), class: "btn btn-default"
+    = f.button :submit, class: "btn btn-primary", value: "#{t(:create)} #{Comment.model_name.human}"
 
 javascript:
   $('#comment_rating').raty({

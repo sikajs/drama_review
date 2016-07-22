@@ -2,9 +2,8 @@
   = simple_format(comment.content)
   .star-rating data-score== comment.rating
   p
-    = "By "
+    = t('by')
     span.show_user
       = "#{comment.user.name} "
-    = time_ago_in_words(comment.created_at)
-    = " ago"
+    = "#{time_ago_in_words(comment.created_at)} #{t('ago')}"
 hr
