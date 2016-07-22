@@ -2,6 +2,8 @@
 
 tw:
   devise:
+    sign_up: "註冊"
+    log_in: "登入"
     confirmations:
       confirmed: "您的 email 信箱已經確認成功."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -60,3 +62,4 @@ tw:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
