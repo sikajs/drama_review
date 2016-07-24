@@ -21,6 +21,11 @@
 
 en:
   new: "New "
+  edit: "Edit"
+  delete: "Delete"
+  cancel: "Cancel"
+  create: "Create"
+  submit: "Submit"
   ago: "ago"
   by: "By"
   no_comment_yet_msg: No comment in this yet. Be the first one!
