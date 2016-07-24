@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   end
 
   def change_locale
-    l = params[:locale].to_s.strip.to_sym
-    super.set_locale if I18n.available_locales.include?(1)
+    super.set_locale if I18n.available_locales.include?(params[:locale].to_s.strip.to_sym)
     redirect_to root_path
   end
 end
