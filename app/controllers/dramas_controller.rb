@@ -46,7 +46,7 @@ class DramasController < ApplicationController
   def destroy
     if @drama.user == current_user
       @drama.image = nil
-      @drama.save
+      @drama.save!
       @drama.destroy
       flash[:success] = "Drama successfully deleted"
       redirect_to root_path
