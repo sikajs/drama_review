@@ -49,8 +49,15 @@ en:
       en: "English"
       tw: "Traditional Chinese"
 
+############ Model Views #############
   dramas:
     show:
       user_review_head: "User Reviews"
       new_comment: "Write New Comment"
       peer_rating: "Peer Rating"
+  users:
+    show:
+      profile: "Profile"
+      username: "Name"
+      email:  "Email"
+      num_of_comments: "Number of Comments"

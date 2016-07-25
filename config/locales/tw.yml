@@ -42,12 +42,19 @@ tw:
       en: "英文"
       tw: "繁體中文"
 
+  datetime:
+    distance_in_words:
+      x_days: "%{count} 天"
+
+############ Model Views #############
   dramas:
     show:
       user_review_head: "使用者評論"
       new_comment: "建立新評論"
       peer_rating: "共同評分"
-  datetime:
-    distance_in_words:
-      x_days: "%{count} 天"
-
+  users:
+    show:
+      profile: "個人情報"
+      username: "姓名"
+      email:  "電子信箱"
+      num_of_comments: "評論數量"

@@ -1,14 +1,14 @@
 div.panel.panel-info.col-md-8.col-md-offset-2.user_panel
   .panel-heading
-    h2 Profile
+    h2= t(".profile")
   .panel-body
     table.table
       tr
-        td Name
+        td= t(".username")
         td= @user.name
       tr
-        td Email
+        td= t(".email")
         td= @user.email
       tr
-        td Comments
+        td= t(".num_of_comments")
         td= show_user_comments_count(@user)

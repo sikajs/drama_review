@@ -3,8 +3,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def set_locale
+    super
+  end
+
   def change_locale
-    super.set_locale if I18n.available_locales.include?(params[:locale].to_s.strip.to_sym)
+    set_locale if I18n.available_locales.include?(params[:locale].to_s.strip.to_sym)
     redirect_to root_path
   end
 end
