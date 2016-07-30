@@ -24,7 +24,7 @@ RSpec.describe DramasController, type: :controller do
     end
 
     context "with invalid attributes" do
-      it "renders the :new tenplate" do
+      it "renders the :new template" do
         @drama = FactoryGirl.build(:invalid_drama, user: user)
         post :create, drama: @drama
         expect render_template :new
